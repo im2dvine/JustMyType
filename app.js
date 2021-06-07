@@ -69,8 +69,8 @@
 $(document).ready(function () {
 
     /*global variables*/
-    let sentences = ["test sentence", "second test sentence"];  //for game testing purposes..
-    //let sentences = ['ten ate neite ate nee enet ite ate inet ent eate', 'Too ato too nOt enot one totA not anot tOO aNot', 'oat itain oat tain nate eate tea anne inant nean', 'itant eate anot eat nato inate eat anot tain eat', 'nee ene ate ite tent tiet ent ine ene ete ene ate'];
+    //let sentences = ["test sentence", "second test sentence"];  //for game testing purposes..
+    let sentences = ['ten ate neite ate nee enet ite ate inet ent eate', 'Too ato too nOt enot one totA not anot tOO aNot', 'oat itain oat tain nate eate tea anne inant nean', 'itant eate anot eat nato inate eat anot tain eat', 'nee ene ate ite tent tiet ent ine ene ete ene ate'];
     let sentenceIndex = 0; //index of sentence in array
     let letterIndex = 0; //index of letter started at zero..
     let numberOfMistakes = 0; //# of mistakes
