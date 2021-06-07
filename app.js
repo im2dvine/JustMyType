@@ -129,7 +129,7 @@ $(document).ready(function () {
                     letterIndex++;
                     let nextLetter = currentSentence[letterIndex];
 
-                    /*throws next letter into the target div on keypress if correct
+                    /*throws next letter into the target div on keypress if correct*/
                     targetLetterDiv.text(nextLetter);
 
                     $("#feedback").append("<span class='glyphicon glyphicon-ok'></span>"); //displays green icon to element w/id feedback if correct letter pressed
@@ -162,7 +162,7 @@ $(document).ready(function () {
                 /*adds new text to the sentence div with game info*/
                 $("#sentence").append("No More Sentences!!\n" + "Your Score: " + wpm + " words per minute!");
                 /*fades in a replay button*/
-                targetLetterDiv.append(replayButton).hide().delay(3000).fadeIn(300);
+                targetLetterDiv.append(replayButton);
             }
         }
     })
