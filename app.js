@@ -79,7 +79,7 @@ $(document).ready(function () {
     let timeStampEnd = 0; //when time stamp ends
     let numberOfWords = 54; //# of words in sentence array
 
-    let replayButton = $("<input class='btn btn-success' type='button' value='Wanna Play Again?' onClick='window.location.reload()'>"); //replay button created to reload page if games wants to be played again
+    let replayButton = $("<input class='btn btn-success' type='button' value='Play Again?' onClick='window.location.reload()'>"); //replay button created to reload page if games wants to be played again
 
     /*sets the current sentence and current letter to show in the divs made for them and to show in browser*/
     let currentSentence = sentences[0]; //sets current Sentence to equal sentences at index of [0]
@@ -116,22 +116,22 @@ $(document).ready(function () {
             keysPressed++; //increases number in keys pressed
         }
 
+        
         let currentSentence = sentences[sentenceIndex]; 
         let currentLetter = currentSentence[letterIndex];
-
-        /*moves the letter index over and gets the next letter to put into the target letter div on each keypress*/
-        let nextLetter = currentSentence[letterIndex];
-        
-        /*throws next letter into the target div on keypress pass or fail*/
-        targetLetterDiv.text(nextLetter);
-        letterIndex++;
-    
         
         
         if (sentenceIndex < sentences.length) {
             /*checks accuracy and adds the glyphicons to the feedback div only until the sentence is ran through*/
             if (letterIndex < currentSentence.length) {
                 if (e.which === currentLetter.charCodeAt()) { //if letter pressed equals key code 
+            
+                    /*moves the letter index over and gets the next letter to put into the target letter div on each keypress*/
+                    letterIndex++;
+                    let nextLetter = currentSentence[letterIndex];
+                    
+                    /*throws next letter into the target div on keypress pass or fail*/
+                    targetLetterDiv.text(nextLetter);
                     $("#feedback").append("<span class='glyphicon glyphicon-ok'></span>"); //displays green icon to element w/id feedback if correct letter pressed
                     /*moves the yellow block over if letter correct*/
                     $("#yellow-block").animate({ left: "+=17.5px" }, { duration: 1, easing: "linear" }); //animates element with id yellow-block
@@ -161,9 +161,8 @@ $(document).ready(function () {
                 /*adds new text to the sentence div with game info*/
                 $("#sentence").append("No More Sentences!!\n" + "Your Score: " + wpm + " words per minute!");
                 /*fades in a replay button*/
-                targetLetterDiv.append(replayButton).hide().delay(3000).fadeIn(500);
+                targetLetterDiv.append(replayButton).hide().delay(3000).fadeIn(300);
             }
         }
     })
 })
-
