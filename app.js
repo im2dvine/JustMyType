@@ -116,23 +116,24 @@ $(document).ready(function () {
             keysPressed++; //increases number in keys pressed
         }
 
-        
-        let currentSentence = sentences[sentenceIndex]; 
+
+        let currentSentence = sentences[sentenceIndex];
         let currentLetter = currentSentence[letterIndex];
-        
-        
+
+
         if (sentenceIndex < sentences.length) {
             /*checks accuracy and adds the glyphicons to the feedback div only until the sentence is ran through*/
             if (letterIndex < currentSentence.length) {
                 if (e.which === currentLetter.charCodeAt()) { //if letter pressed equals key code 
-            
                     /*moves the letter index over and gets the next letter to put into the target letter div on each keypress*/
                     letterIndex++;
                     let nextLetter = currentSentence[letterIndex];
-                    
+
                     /*throws next letter into the target div on keypress pass or fail*/
                     targetLetterDiv.text(nextLetter);
+
                     $("#feedback").append("<span class='glyphicon glyphicon-ok'></span>"); //displays green icon to element w/id feedback if correct letter pressed
+
                     /*moves the yellow block over if letter correct*/
                     $("#yellow-block").animate({ left: "+=17.5px" }, { duration: 1, easing: "linear" }); //animates element with id yellow-block
                 } else {
