@@ -129,7 +129,7 @@ $(document).ready(function () {
                     letterIndex++;
                     let nextLetter = currentSentence[letterIndex];
 
-                    /*throws next letter into the target div on keypress pass or fail*/
+                    /*throws next letter into the target div on keypress if correct
                     targetLetterDiv.text(nextLetter);
 
                     $("#feedback").append("<span class='glyphicon glyphicon-ok'></span>"); //displays green icon to element w/id feedback if correct letter pressed
